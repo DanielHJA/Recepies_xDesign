@@ -8,19 +8,25 @@
 
 import UIKit
 
-class RecepieTableViewCell: UITableViewCell {
+class RecepieTableViewCell: UITableViewCell, SetRecepieImageProtocol {
 
     @IBOutlet weak var recepieName: UILabel!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
+    func setThumbnailImage(thumbnail: UIImage) {
+        
+        DispatchQueue.main.async {
+     
+            self.thumbnailImageView.image = thumbnail
+            
+        }
+    }
 }

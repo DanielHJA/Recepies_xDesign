@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SetRecepieImageProtocol {
-    func setThumbnailImage()
+    func setThumbnailImage(thumbnail: UIImage)
 }
 
 class Recepie: NSObject {
@@ -38,8 +38,10 @@ class Recepie: NSObject {
             
             if let data = data {
                 
-                self.thumbnail = UIImage(data: data)
-                self.delegate?.setThumbnailImage()
+                let image = UIImage(data: data)
+                
+                self.thumbnail = image
+                self.delegate?.setThumbnailImage(thumbnail: image!)
                 
             } else {
                 

@@ -6,14 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Search recepie-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Recepies_xDesign" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Recepies_xDesign" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,20 +38,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepie name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClQ-lT-bXK">
-                                                    <rect key="frame" x="8" y="29" width="108" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ay-NP-SFr">
+                                                    <rect key="frame" x="8" y="16.5" width="47.5" height="47.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2Ay-NP-SFr" secondAttribute="height" multiplier="1:1" id="IVx-Y8-Rsq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepie name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-6E-8Bo">
+                                                    <rect key="frame" x="63" y="30" width="108" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ClQ-lT-bXK" firstAttribute="leading" secondItem="pjs-f8-sYE" secondAttribute="leadingMargin" id="DJI-gN-DNY"/>
-                                                <constraint firstItem="ClQ-lT-bXK" firstAttribute="centerY" secondItem="pjs-f8-sYE" secondAttribute="centerY" id="ELK-qm-Zkj"/>
+                                                <constraint firstItem="DIp-6E-8Bo" firstAttribute="leading" secondItem="2Ay-NP-SFr" secondAttribute="trailing" constant="8" id="Cd6-Z7-gvh"/>
+                                                <constraint firstItem="2Ay-NP-SFr" firstAttribute="height" secondItem="pjs-f8-sYE" secondAttribute="height" multiplier="0.6" id="HP1-FB-GNB"/>
+                                                <constraint firstItem="2Ay-NP-SFr" firstAttribute="leading" secondItem="pjs-f8-sYE" secondAttribute="leading" constant="8" id="JQx-4N-ER9"/>
+                                                <constraint firstItem="DIp-6E-8Bo" firstAttribute="centerY" secondItem="pjs-f8-sYE" secondAttribute="centerY" id="s86-1q-9JJ"/>
+                                                <constraint firstItem="2Ay-NP-SFr" firstAttribute="centerY" secondItem="pjs-f8-sYE" secondAttribute="centerY" id="xQs-du-NpI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="recepieName" destination="ClQ-lT-bXK" id="eMQ-VK-FNC"/>
+                                            <outlet property="thumbnailImageView" destination="2Ay-NP-SFr" id="eYd-EZ-Gen"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -68,6 +78,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search recepie" id="lE9-EO-ZyE"/>
+                    <connections>
+                        <outlet property="searchBar" destination="esE-pU-OHR" id="EZ0-4R-gkY"/>
+                        <outlet property="tableView" destination="HtT-Pu-RWu" id="6Va-0K-pTD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
