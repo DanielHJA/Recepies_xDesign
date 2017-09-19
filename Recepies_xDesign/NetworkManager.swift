@@ -11,27 +11,27 @@ import UIKit
 class NetworkManager {
 
     class func dataTask(url: String, completion: @escaping (_ data: Data?, _ error: Error?)->()) {
-    
+        
         guard let url = URL(string: url) else {
-            print("Something went wrong when creating the URL")
+            print("there was a problem creating the url")
             return
         }
         
-        let request = URLRequest(url: url)
-        let session = URLSession(configuration: URLSessionConfiguration.default)
+            let request = URLRequest(url: url)
+            let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        session.dataTask(with: request) { (data, response, error) in
+            session.dataTask(with: request) { (data, response, error) in
             
-            if let error = error {
+                if let error = error {
             
-                print("There was an error downloading the data | Error: \(error.localizedDescription)")
-                completion(nil, error)
+                    print("There was an error downloading the data | Error: \(error.localizedDescription)")
+                    completion(nil, error)
                 
-            } else {
+                } else {
             
-                completion(data, nil)
+                    completion(data, nil)
             
-            }
-        }.resume()
+                }
+            }.resume()
     }
 }

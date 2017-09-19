@@ -71,8 +71,8 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         
         let current = recepies[indexPath.row]
 
-        cell.recepieNameLabel.text = current.title
         current.delegate = cell
+        cell.recepieNameLabel.text = current.title
 
         return cell
     }

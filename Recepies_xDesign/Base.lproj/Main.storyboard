@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,14 +39,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ay-NP-SFr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbnail_default" translatesAutoresizingMaskIntoConstraints="NO" id="2Ay-NP-SFr">
                                                     <rect key="frame" x="8" y="16.5" width="47.5" height="47.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="2Ay-NP-SFr" secondAttribute="height" multiplier="1:1" id="IVx-Y8-Rsq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepie name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-6E-8Bo">
-                                                    <rect key="frame" x="63" y="30" width="108" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepie name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-6E-8Bo">
+                                                    <rect key="frame" x="63" y="30" width="271" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -55,6 +56,7 @@
                                                 <constraint firstItem="DIp-6E-8Bo" firstAttribute="leading" secondItem="2Ay-NP-SFr" secondAttribute="trailing" constant="8" id="Cd6-Z7-gvh"/>
                                                 <constraint firstItem="2Ay-NP-SFr" firstAttribute="height" secondItem="pjs-f8-sYE" secondAttribute="height" multiplier="0.6" id="HP1-FB-GNB"/>
                                                 <constraint firstItem="2Ay-NP-SFr" firstAttribute="leading" secondItem="pjs-f8-sYE" secondAttribute="leading" constant="8" id="JQx-4N-ER9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DIp-6E-8Bo" secondAttribute="trailing" id="eyi-YN-u8j"/>
                                                 <constraint firstItem="DIp-6E-8Bo" firstAttribute="centerY" secondItem="pjs-f8-sYE" secondAttribute="centerY" id="s86-1q-9JJ"/>
                                                 <constraint firstItem="2Ay-NP-SFr" firstAttribute="centerY" secondItem="pjs-f8-sYE" secondAttribute="centerY" id="xQs-du-NpI"/>
                                             </constraints>
@@ -96,7 +98,7 @@
                         <viewControllerLayoutGuide type="top" id="bpn-kV-nV0"/>
                         <viewControllerLayoutGuide type="bottom" id="hXP-Jc-IO2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t8P-dS-7Tp">
+                    <view key="view" contentMode="scaleAspectFit" id="t8P-dS-7Tp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,4 +127,7 @@
             <point key="canvasLocation" x="65" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="thumbnail_default" width="64" height="64"/>
+    </resources>
 </document>

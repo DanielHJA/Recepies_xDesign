@@ -27,9 +27,11 @@ class Recepie: NSObject {
         self.href = URL(string: href)
         self.ingredients = ingredients.components(separatedBy: ",")
         
-        guard let thumbnail = thumbnail else { return }
+        if let thumbnail = thumbnail, thumbnail != "" {
         
-        self.fetchThumbnail(url: thumbnail)
+            self.fetchThumbnail(url: thumbnail)
+            
+        }
     }
     
     func fetchThumbnail(url: String) {
@@ -43,9 +45,9 @@ class Recepie: NSObject {
                 self.thumbnail = image
                 self.delegate?.setThumbnailImage(thumbnail: image!)
                 
-            } else {
-                
-                print("There was an error fetching the thumbnail | Error: \(error!.localizedDescription)")
+            } else if let error = error {
+
+                print("There was an error fetching the thumbnail | Error: \(error.localizedDescription)")
                 
             }
         }
