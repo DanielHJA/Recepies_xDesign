@@ -17,7 +17,7 @@ class Recepie: NSObject {
     var title: String!
     var href: URL!
     var ingredients = [String]()
-    var thumbnail: UIImage?
+    var thumbnail: UIImage!
     var delegate: SetRecepieImageProtocol?
     
     init(title: String, href: String, ingredients: String, thumbnail: String) {

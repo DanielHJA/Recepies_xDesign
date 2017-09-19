@@ -103,12 +103,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTf-9K-mKo">
-                                <rect key="frame" x="67" y="72" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eU8-Oy-tEn">
+                                <rect key="frame" x="71" y="84" width="233" height="233.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eU8-Oy-tEn" secondAttribute="height" multiplier="1:1" id="GIM-cG-N5p"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eU8-Oy-tEn" firstAttribute="top" secondItem="bpn-kV-nV0" secondAttribute="bottom" constant="20" id="4VE-eE-jnM"/>
+                            <constraint firstItem="eU8-Oy-tEn" firstAttribute="height" secondItem="t8P-dS-7Tp" secondAttribute="height" multiplier="0.35" id="ON0-ps-Y6y"/>
+                            <constraint firstItem="eU8-Oy-tEn" firstAttribute="centerX" secondItem="t8P-dS-7Tp" secondAttribute="centerX" id="uiI-k1-Hwn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recepie name" id="kgD-n4-Kfx">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="bZh-Og-HdY">
@@ -117,6 +124,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="thumbnailImageView" destination="eU8-Oy-tEn" id="bne-sm-xMt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3u-4o-89u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var thumbnailImageView: UIImageView!
 
     var recepie: Recepie!
     
@@ -16,7 +18,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = recepie.title
-        
+        thumbnailImageView.image = recepie.thumbnail
     }
     
     @IBAction func popViewController(_ sender: UIBarButtonItem) {
