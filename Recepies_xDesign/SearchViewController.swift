@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var activityView: UIActivityIndicatorView!
     var recepies = [Recepie]()
     
     override func viewDidLoad() {
@@ -21,6 +22,15 @@ class SearchViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.searchBar.delegate = self
+        initActvityView()
+    }
+    
+    func initActvityView() {
+    
+        activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityView!.center = self.view.center
+        self.view.addSubview(activityView!)
+        activityView!.bringSubview(toFront: self.view)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +43,10 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-                
+        
         let url = "\(Constants.API.recepiesURL)\(searchText)"
+        
+        self.activityView.startAnimating()
         
         NetworkManager.dataTask(url: url) { [weak self] (data, error) in
             
@@ -48,6 +60,7 @@ extension SearchViewController: UISearchBarDelegate {
                     
                     self?.tableView.reloadData()
                     
+                    self?.activityView.stopAnimating()
                 }
             })
         }

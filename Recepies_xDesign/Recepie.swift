@@ -20,24 +20,28 @@ class Recepie: NSObject {
     var thumbnail: UIImage?
     var delegate: SetRecepieImageProtocol?
     
-    init(title: String, href: String, ingredients: String, thumbnail: String?) {
+    init(title: String, href: String, ingredients: String, thumbnail: String) {
         super.init()
         
         self.title = title
         self.href = URL(string: href)
         self.ingredients = ingredients.components(separatedBy: ",")
         
-        if let thumbnail = thumbnail, thumbnail != "" {
+        if thumbnail != "" {
         
             self.fetchThumbnail(url: thumbnail)
+            
+        } else {
+        
+            self.thumbnail = #imageLiteral(resourceName: "thumbnail_default")
             
         }
     }
     
     func fetchThumbnail(url: String) {
-        
+       
         NetworkManager.dataTask(url: url) { (data, error) in
-            
+
             if let data = data {
                 
                 let image = UIImage(data: data)

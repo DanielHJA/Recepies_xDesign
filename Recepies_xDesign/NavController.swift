@@ -14,9 +14,8 @@ class NavController: UINavigationController {
         super.viewDidLoad()
     
         UINavigationBar.appearance().barTintColor = UIColor.orange
-        UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-
+        
     }
 
     override func didReceiveMemoryWarning() {

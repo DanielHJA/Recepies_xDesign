@@ -28,16 +28,15 @@ class RecepieMapper: NSObject {
         let results = jsonDictionary["results"] as! [Dictionary<String, Any>]
         
         for object in results {
-
-            var title: String = "No title"
-            var ingredients: String = ""
+            
+            var title = object["title"] as! String
+            let ingredients = object["ingredients"] as! String
             let href = object["href"] as! String
             let thumbnail = object["thumbnail"] as! String
             
             do {
             
-                title = try (object["title"] as! String).convertHtmlSymbols()!
-                ingredients = try (object["ingredients"] as! String).convertHtmlSymbols()!
+                title = try title.convertHtmlSymbols()!
                 
             } catch let error {
                 print("There was an error converting HTML to text | Error: \(error.localizedDescription)")
