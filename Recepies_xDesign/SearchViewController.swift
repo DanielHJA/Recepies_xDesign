@@ -82,9 +82,22 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: Constants.segueIdentifiers.detailSegue, sender: self)
+    }
     
-        print("Clicked a recepie")
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Constants.segueIdentifiers.detailSegue {
+        
+            guard let index = self.tableView.indexPathForSelectedRow else { return }
+           
+            self.tableView.deselectRow(at: index, animated: true)
+            
+            let current = recepies[index.row]
+            
+            let controller = segue.destination as! DetailViewController
+            controller.recepie = current
+
+        }
     }
 }

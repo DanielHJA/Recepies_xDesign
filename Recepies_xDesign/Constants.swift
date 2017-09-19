@@ -22,4 +22,15 @@ struct Constants {
     
     }
     
+    struct segueIdentifiers {
+    
+        static let detailSegue = "detailSegue"
+    
+    }
+    
+    struct viewControlleridentifiers {
+    
+        static let detailViewController = "DetailViewController"
+    }
+    
 }

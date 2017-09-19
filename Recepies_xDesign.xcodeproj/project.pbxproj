@@ -19,6 +19,8 @@
 		7B969F7C1F71412100CC8DA5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B969F7B1F71412100CC8DA5 /* NetworkManager.swift */; };
 		7B969F7E1F71428900CC8DA5 /* Recepie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B969F7D1F71428900CC8DA5 /* Recepie.swift */; };
 		7B969F801F71502300CC8DA5 /* RecepieMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B969F7F1F71502300CC8DA5 /* RecepieMapper.swift */; };
+		7B969F821F71713600CC8DA5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B969F811F71713600CC8DA5 /* DetailViewController.swift */; };
+		7B969F841F71744700CC8DA5 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B969F831F71744700CC8DA5 /* NavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		7B969F7B1F71412100CC8DA5 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7B969F7D1F71428900CC8DA5 /* Recepie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recepie.swift; sourceTree = "<group>"; };
 		7B969F7F1F71502300CC8DA5 /* RecepieMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecepieMapper.swift; sourceTree = "<group>"; };
+		7B969F811F71713600CC8DA5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7B969F831F71744700CC8DA5 /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +113,10 @@
 			children = (
 				7B969F491F713F0B00CC8DA5 /* AppDelegate.swift */,
 				7B969F4B1F713F0B00CC8DA5 /* SearchViewController.swift */,
+				7B969F811F71713600CC8DA5 /* DetailViewController.swift */,
 				7B969F7F1F71502300CC8DA5 /* RecepieMapper.swift */,
 				7B969F4D1F713F0B00CC8DA5 /* Main.storyboard */,
+				7B969F831F71744700CC8DA5 /* NavController.swift */,
 				7B969F7B1F71412100CC8DA5 /* NetworkManager.swift */,
 				7B969F7D1F71428900CC8DA5 /* Recepie.swift */,
 				7B969F501F713F0B00CC8DA5 /* Assets.xcassets */,
@@ -282,8 +288,10 @@
 				7B969F7C1F71412100CC8DA5 /* NetworkManager.swift in Sources */,
 				7B969F7E1F71428900CC8DA5 /* Recepie.swift in Sources */,
 				7B969F4A1F713F0B00CC8DA5 /* AppDelegate.swift in Sources */,
+				7B969F841F71744700CC8DA5 /* NavController.swift in Sources */,
 				7B969F7A1F7140BA00CC8DA5 /* Constants.swift in Sources */,
 				7B969F801F71502300CC8DA5 /* RecepieMapper.swift in Sources */,
+				7B969F821F71713600CC8DA5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

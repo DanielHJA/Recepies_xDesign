@@ -17,21 +17,21 @@ class NetworkManager {
             return
         }
         
-            let request = URLRequest(url: url)
-            let session = URLSession(configuration: URLSessionConfiguration.default)
+        let request = URLRequest(url: url)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+    
+        session.dataTask(with: request) { (data, response, error) in
+            
+            if let error = error {
         
-            session.dataTask(with: request) { (data, response, error) in
+                print("There was an error downloading the data | Error: \(error.localizedDescription)")
+                completion(nil, error)
             
-                if let error = error {
-            
-                    print("There was an error downloading the data | Error: \(error.localizedDescription)")
-                    completion(nil, error)
-                
-                } else {
-            
-                    completion(data, nil)
-            
-                }
-            }.resume()
+            } else {
+        
+                completion(data, nil)
+        
+            }
+        }.resume()
     }
 }

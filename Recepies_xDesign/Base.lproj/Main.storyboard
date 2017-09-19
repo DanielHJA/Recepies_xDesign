@@ -45,7 +45,7 @@
                                                         <constraint firstAttribute="width" secondItem="2Ay-NP-SFr" secondAttribute="height" multiplier="1:1" id="IVx-Y8-Rsq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepie name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-6E-8Bo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepie name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-6E-8Bo">
                                                     <rect key="frame" x="63" y="30" width="271" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -84,16 +84,17 @@
                     <connections>
                         <outlet property="searchBar" destination="esE-pU-OHR" id="EZ0-4R-gkY"/>
                         <outlet property="tableView" destination="HtT-Pu-RWu" id="6Va-0K-pTD"/>
+                        <segue destination="Cov-fc-LOV" kind="show" identifier="detailSegue" id="ckH-Cz-yTJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--Recepie name-->
         <scene sceneID="bhX-tv-dIl">
             <objects>
-                <viewController id="Cov-fc-LOV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Cov-fc-LOV" customClass="DetailViewController" customModule="Recepies_xDesign" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bpn-kV-nV0"/>
                         <viewControllerLayoutGuide type="bottom" id="hXP-Jc-IO2"/>
@@ -103,15 +104,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Recepie name" id="kgD-n4-Kfx">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="bZh-Og-HdY">
+                            <connections>
+                                <action selector="popViewController:" destination="Cov-fc-LOV" id="wG6-iB-Zuk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3u-4o-89u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1728.8" y="123.68815592203899"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="bqn-gQ-tqr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ek-9W-SXo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ek-9W-SXo" customClass="NavController" customModule="Recepies_xDesign" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eg7-yG-mm1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
