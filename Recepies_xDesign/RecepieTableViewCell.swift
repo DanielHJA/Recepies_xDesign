@@ -10,7 +10,7 @@ import UIKit
 
 class RecepieTableViewCell: UITableViewCell, SetRecepieImageProtocol {
 
-    @IBOutlet weak var recepieName: UILabel!
+    @IBOutlet weak var recepieNameLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
     override func awakeFromNib() {

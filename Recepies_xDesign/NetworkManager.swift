@@ -10,10 +10,10 @@ import UIKit
 
 class NetworkManager {
 
-    class func dataTask(url: String, compeltion: @escaping (_ data: Data?, _ error: Error?)->()) {
+    class func dataTask(url: String, completion: @escaping (_ data: Data?, _ error: Error?)->()) {
     
         guard let url = URL(string: url) else {
-            print("Something went wrong when creating the URL ")
+            print("Something went wrong when creating the URL")
             return
         }
         
@@ -24,11 +24,12 @@ class NetworkManager {
             
             if let error = error {
             
-                compeltion(nil, error)
+                print("There was an error downloading the data | Error: \(error.localizedDescription)")
+                completion(nil, error)
                 
             } else {
             
-                compeltion(data, nil)
+                completion(data, nil)
             
             }
         }.resume()

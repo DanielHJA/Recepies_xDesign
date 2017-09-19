@@ -60,6 +60,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="recepieNameLabel" destination="DIp-6E-8Bo" id="vKW-me-3lu"/>
                                             <outlet property="thumbnailImageView" destination="2Ay-NP-SFr" id="eYd-EZ-Gen"/>
                                         </connections>
                                     </tableViewCell>

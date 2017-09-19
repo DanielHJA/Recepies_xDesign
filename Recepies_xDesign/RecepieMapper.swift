@@ -25,14 +25,21 @@ class RecepieMapper: NSObject {
         
         }
         
-        for (key, value) in jsonDictionary {
+        let results = jsonDictionary["results"] as! [Dictionary<String, Any>]
         
-            print(key, value)
+        for object in results {
         
+            let title = object["title"] as! String
+            let href = object["href"] as! String
+            let ingredients = object["ingredients"] as! String
+            let thumbnail = object["thumbnail"] as! String
+        
+            let recepie = Recepie(title: title, href: href, ingredients: ingredients, thumbnail: thumbnail)
+            
+            recepies.append(recepie)
+            
         }
         
-     //   let recepie = Recepie(title: <#T##String#>, href: <#T##String#>, ingredients: <#T##String#>, thumbnail: <#T##String?#>)
-        
-     //   recepies.append(recepie)
+        completion(recepies)
     }
 }

@@ -21,14 +21,6 @@ class SearchViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.searchBar.delegate = self
-    
-        NetworkManager.dataTask(url: Constants.API.recepiesURL + "omelet") { [weak self] (data, error) in
-            
-            RecepieMapper.mapRecepie(data: data!, completion: { (recepies) in
-                
-                
-            })
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +29,32 @@ class SearchViewController: UIViewController {
     }
 }
 
+// Searchbar delegate
 extension SearchViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+                
+        let url = "\(Constants.API.recepiesURL)\(searchText)"
         
-        NetworkManager.dataTask(url: searchText) { [weak self] (data, error) in
+        NetworkManager.dataTask(url: url) { [weak self] (data, error) in
             
+            guard let data = data else { return }
             
-            
+            RecepieMapper.mapRecepie(data: data, completion: { (recepies) in
+                
+                self?.recepies = recepies
+                
+                DispatchQueue.main.async {
+                    
+                    self?.tableView.reloadData()
+                    
+                }
+            })
         }
     }
 }
 
+// Tableview delegate
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,8 +70,8 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.recepieCell, for: indexPath) as! RecepieTableViewCell
         
         let current = recepies[indexPath.row]
- 
-        cell.recepieName.text = current.title
+
+        cell.recepieNameLabel.text = current.title
         current.delegate = cell
 
         return cell
@@ -82,4 +88,3 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     }
 }
-
