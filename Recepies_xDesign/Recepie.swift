@@ -25,7 +25,7 @@ class Recepie: NSObject {
         
         self.title = title
         self.href = URL(string: href)
-        self.ingredients = ingredients.components(separatedBy: ",")
+        self.ingredients = ingredients.replacingOccurrences(of: " ", with: "").components(separatedBy: ",")
         
         if thumbnail != "" {
         

@@ -109,12 +109,62 @@
                                     <constraint firstAttribute="width" secondItem="eU8-Oy-tEn" secondAttribute="height" multiplier="1:1" id="GIM-cG-N5p"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v25-Lf-dOG">
+                                <rect key="frame" x="143" y="542" width="88" height="30"/>
+                                <state key="normal" title="View recepie"/>
+                                <connections>
+                                    <action selector="loadFullRecepie:" destination="Cov-fc-LOV" eventType="touchUpInside" id="s62-bA-xzg"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sut-Fw-3q7">
+                                <rect key="frame" x="38" y="343" width="300" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Ns5-ge-FgT"/>
+                                    <constraint firstAttribute="height" constant="180" id="PbB-UA-DoE"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientsCell" textLabel="Qgv-HM-79T" style="IBUITableViewCellStyleDefault" id="hso-f2-4Q5">
+                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hso-f2-4Q5" id="IIi-8F-rZX">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qgv-HM-79T">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PbB-UA-DoE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Ns5-ge-FgT"/>
+                                        <include reference="PbB-UA-DoE"/>
+                                    </mask>
+                                </variation>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eU8-Oy-tEn" firstAttribute="top" secondItem="bpn-kV-nV0" secondAttribute="bottom" constant="20" id="4VE-eE-jnM"/>
+                            <constraint firstItem="v25-Lf-dOG" firstAttribute="centerX" secondItem="t8P-dS-7Tp" secondAttribute="centerX" id="5mq-GV-brY"/>
+                            <constraint firstItem="sut-Fw-3q7" firstAttribute="centerX" secondItem="t8P-dS-7Tp" secondAttribute="centerX" id="L2r-ND-IPL"/>
                             <constraint firstItem="eU8-Oy-tEn" firstAttribute="height" secondItem="t8P-dS-7Tp" secondAttribute="height" multiplier="0.35" id="ON0-ps-Y6y"/>
+                            <constraint firstItem="v25-Lf-dOG" firstAttribute="top" secondItem="sut-Fw-3q7" secondAttribute="bottom" constant="19" id="dXg-JG-xXn"/>
                             <constraint firstItem="eU8-Oy-tEn" firstAttribute="centerX" secondItem="t8P-dS-7Tp" secondAttribute="centerX" id="uiI-k1-Hwn"/>
+                            <constraint firstItem="sut-Fw-3q7" firstAttribute="top" secondItem="eU8-Oy-tEn" secondAttribute="bottom" constant="25.5" id="vLJ-c0-yVP"/>
+                            <constraint firstItem="sut-Fw-3q7" firstAttribute="width" secondItem="t8P-dS-7Tp" secondAttribute="width" multiplier="0.8" id="w4A-sX-qBx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recepie name" id="kgD-n4-Kfx">
@@ -125,6 +175,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="sut-Fw-3q7" id="RVl-Yj-6oD"/>
                         <outlet property="thumbnailImageView" destination="eU8-Oy-tEn" id="bne-sm-xMt"/>
                     </connections>
                 </viewController>

@@ -19,7 +19,7 @@ struct Constants {
     struct CellIdentifiers {
     
         static let recepieCell = "recepieCell"
-    
+        static let ingredientsCell = "ingredientsCell"
     }
     
     struct segueIdentifiers {
