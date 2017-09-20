@@ -43,7 +43,7 @@ class RecepieMapper: NSObject {
             }
             
             let recepie = Recepie(title: title, href: href, ingredients: ingredients, thumbnail: thumbnail)
-            
+
             recepies.append(recepie)
             
         }

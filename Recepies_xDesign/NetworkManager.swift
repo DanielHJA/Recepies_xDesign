@@ -21,7 +21,7 @@ class NetworkManager {
         let session = URLSession(configuration: URLSessionConfiguration.default)
     
         session.dataTask(with: request) { (data, response, error) in
-            
+
             if let error = error {
         
                 print("There was an error downloading the data | Error: \(error.localizedDescription)")

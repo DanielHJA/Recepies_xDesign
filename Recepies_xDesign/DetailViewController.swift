@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
     }
     
     deinit {
-        print("Detail viewcontroller was released")
+        print("Detail ViewController deinit")
     }
 }
 
