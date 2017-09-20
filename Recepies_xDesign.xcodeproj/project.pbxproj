@@ -112,18 +112,12 @@
 			isa = PBXGroup;
 			children = (
 				7B969F491F713F0B00CC8DA5 /* AppDelegate.swift */,
-				7B969F4B1F713F0B00CC8DA5 /* SearchViewController.swift */,
-				7B969F811F71713600CC8DA5 /* DetailViewController.swift */,
-				7B969F7F1F71502300CC8DA5 /* RecepieMapper.swift */,
 				7B969F4D1F713F0B00CC8DA5 /* Main.storyboard */,
-				7B969F831F71744700CC8DA5 /* NavController.swift */,
-				7B969F7B1F71412100CC8DA5 /* NetworkManager.swift */,
-				7B969F7D1F71428900CC8DA5 /* Recepie.swift */,
-				7B969F501F713F0B00CC8DA5 /* Assets.xcassets */,
-				7B969F771F71402100CC8DA5 /* RecepieTableViewCell.swift */,
-				7B969F791F7140BA00CC8DA5 /* Constants.swift */,
-				7B969F521F713F0B00CC8DA5 /* LaunchScreen.storyboard */,
-				7B969F551F713F0B00CC8DA5 /* Info.plist */,
+				7B969F871F71EAD700CC8DA5 /* Controllers */,
+				7B969F891F71EB0A00CC8DA5 /* Helpers */,
+				7B969F881F71EAF700CC8DA5 /* Custom classes */,
+				7B969F861F71EACA00CC8DA5 /* Misc */,
+				7B969F851F71EAB500CC8DA5 /* Cells */,
 			);
 			path = Recepies_xDesign;
 			sourceTree = "<group>";
@@ -144,6 +138,52 @@
 				7B969F6B1F713F0C00CC8DA5 /* Info.plist */,
 			);
 			path = Recepies_xDesignUITests;
+			sourceTree = "<group>";
+		};
+		7B969F851F71EAB500CC8DA5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7B969F771F71402100CC8DA5 /* RecepieTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		7B969F861F71EACA00CC8DA5 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				7B969F501F713F0B00CC8DA5 /* Assets.xcassets */,
+				7B969F521F713F0B00CC8DA5 /* LaunchScreen.storyboard */,
+				7B969F551F713F0B00CC8DA5 /* Info.plist */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		7B969F871F71EAD700CC8DA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B969F4B1F713F0B00CC8DA5 /* SearchViewController.swift */,
+				7B969F811F71713600CC8DA5 /* DetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7B969F881F71EAF700CC8DA5 /* Custom classes */ = {
+			isa = PBXGroup;
+			children = (
+				7B969F831F71744700CC8DA5 /* NavController.swift */,
+				7B969F7D1F71428900CC8DA5 /* Recepie.swift */,
+			);
+			name = "Custom classes";
+			sourceTree = "<group>";
+		};
+		7B969F891F71EB0A00CC8DA5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7B969F791F7140BA00CC8DA5 /* Constants.swift */,
+				7B969F7F1F71502300CC8DA5 /* RecepieMapper.swift */,
+				7B969F7B1F71412100CC8DA5 /* NetworkManager.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
