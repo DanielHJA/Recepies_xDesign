@@ -13,8 +13,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var activityView: UIActivityIndicatorView!
-    var recepies = [Recepie]()
+    fileprivate var activityView: UIActivityIndicatorView!
+    fileprivate var recepies = [Recepie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,20 +48,21 @@ extension SearchViewController: UISearchBarDelegate {
         
         self.activityView.startAnimating()
         
-        NetworkManager.dataTask(url: url) { [weak self] (data, error) in
+        NetworkManager.dataTask(url: url) { (data, error) in
             
             guard let data = data else { return }
             
-            RecepieMapper.mapRecepie(data: data, completion: { (recepies) in
+            RecepieMapper.mapRecepie(data: data, completion: { [unowned self] (recepies) in
                 
-                self?.recepies = recepies
+                self.recepies = recepies
                 
                 DispatchQueue.main.async {
                     
-                    self?.tableView.reloadData()
+                        self.tableView.reloadData()
                     
-                    self?.activityView.stopAnimating()
-                }
+                        self.activityView.stopAnimating()
+                    
+                    }
             })
         }
     }

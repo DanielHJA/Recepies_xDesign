@@ -45,6 +45,10 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit {
+        print("Detail viewcontroller was released")
+    }
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
